@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<header>
+    <a href="/"><img src=ЛОГО alt="logo" class="logo"></a>
+    <a class="name" href="/">ТудаСюда</a>
+</header>
+    <p class="input">Вход</p>
+<form method="post" id="inputForm" novalidate>
+  {% csrf_token %}
+  {{ form.email }}
+  {{ form.password }}
+    <p class="error">{{out}}</p>
+  <input type="submit" id="button" value="Войти">
+</form>
+<h1 class="reg">Еще нет аккаунта, <a href="/registration" class="create">создайте</a></h1>
+</body>
+</html>
