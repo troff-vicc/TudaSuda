@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .sqlite import DateBase
-from .forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm, AddForm
 import json
 
 
@@ -115,12 +115,44 @@ def profile(request):
         return HttpResponseRedirect('/')
     
     dateBase = DateBase()
-    userList = list(dateBase.execute(f"SELECT username, description, img FROM users WHERE id = '{id}'").fetchone())
-    img = json.loads(userList[-1])[0]
+    userList = list(dateBase.execute(f"SELECT username, description, img, route FROM users WHERE id = '{id}'").fetchone())
+    img = json.loads(userList[2])[0]
     img = dateBase.execute(
         f'''SELECT img FROM images WHERE id = {img}'''
     ).fetchone()[0]
     userList[2] = img[2:-1]
-    return render(request, 'profile.html', {'userList': userList})
+    routesID = json.loads(userList[3])
+    routesS = []
+    for ID in routesID:
+        routes = dateBase.execute(
+            f'''SELECT id, name, description, autor, img
+                    FROM route WHERE id="{ID}" '''
+        ).fetchone()
+        img = json.loads(routes[-1])[0]
+        autor = json.loads(routes[-2])[0]
+        img = dateBase.execute(
+            f'''SELECT img FROM images WHERE id = {img}'''
+        ).fetchone()[0]
+        autor = dateBase.execute(
+            f'''SELECT username FROM users WHERE id = {autor}'''
+        ).fetchone()[0]
+        routes = list(routes[:-2]) + [autor] + [img[2:-1]]
+        routesS.append(routes)
+    dateBase.close()
+    return render(request, 'profile.html', {'userList': userList, "routes": routesS})
+
+
+def add(request):
+    if request.COOKIES.get('id'):
+        id = request.COOKIES.get('id')
+    else:
+        return HttpResponseRedirect('/')
     
-    
+    dateBase = DateBase()
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            None
+    else:
+        form = AddForm()
+    return render(request, 'add.html', {'form': form})

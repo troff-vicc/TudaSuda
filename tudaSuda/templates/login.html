@@ -3,22 +3,21 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/login.css'%}">
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Войти</title>
 </head>
 <body>
-<header>
-    <a href="/"><img src=ЛОГО alt="logo" class="logo"></a>
-    <a class="name" href="/">ТудаСюда</a>
-</header>
+    <p class="cent"><a href="/"><img src="{% static 'logo.jpg'%}" alt="logo" class="logo"></a></p>
+    <!--<a class="name" href="/">ТудаСюда</a>-->
     <p class="input">Вход</p>
 <form method="post" id="inputForm" novalidate>
-  {% csrf_token %}
-  {{ form.email }}
-  {{ form.password }}
+    {% csrf_token %}
+    <p class="cent">{{ form.name }}</p>
+    <p class="cent">{{ form.password }}</p>
     <p class="error">{{out}}</p>
-  <input type="submit" id="button" value="Войти">
+ <p class="cent"> <input type="submit" id="button" value="Войти"></p>
 </form>
-<h1 class="reg">Еще нет аккаунта, <a href="/registration" class="create">создайте</a></h1>
+<p class="reg">Еще нет аккаунта, <a href="/registration" class="create">создайте</a></p>
 </body>
 </html>

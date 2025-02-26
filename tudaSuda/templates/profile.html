@@ -14,5 +14,11 @@
 <b>{{userList.0}}</b>
 <img src="data:image/gif;base64,{{userList.2}}">
 <p>{{userList.1}}</p>
+{% for route in routes %}
+<div class="containers" id="{{route.0}}">
+    <b>{{route.1}}</b>
+    <img src="data:image/gif;base64,{{route.4}}">
+</div>
+{% endfor %}
 </body>
 </html>

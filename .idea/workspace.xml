@@ -5,36 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e588072-b34e-4521-9803-61eb8d0b45d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TudaSuda.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/dataPlace.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/static/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/templates/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/sqlite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tudaSuda/static/css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tudaSuda/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tudaSuda/static/css/registration.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/dataPlace.db" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/dataPlace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/sqlite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +35,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;troff-vicc&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/troff-vicc/TudaSuda.git&quot;,
+    &quot;accountId&quot;: &quot;7230e23c-0271-4626-9c85-8b79fc53f072&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -69,6 +64,7 @@
     "Python.main.executor": "Run",
     "Python.sqlite.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/trofimovviktor/PycharmProjects/TudaSuda/tudaSuda/templates",
@@ -155,20 +151,22 @@
       <option name="presentableId" value="Default" />
       <updated>1739784516318</updated>
     </task>
+    <task id="LOCAL-00001" summary="the 1">
+      <option name="closed" value="true" />
+      <created>1740489504057</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740489504057</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.db" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tudaSuda/tudaSuda/sqlite.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="the 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="the 1" />
   </component>
 </project>

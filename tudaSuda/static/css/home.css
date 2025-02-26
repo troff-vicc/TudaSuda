@@ -1,0 +1,27 @@
+.logo{
+    width:50px;
+    border-radius: 25px;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+.containers{
+    width:200px;
+    border:1px solid black;
+    border-radius: 30px;
+}
+.tourName{
+    text-align: center;
+}
+.imgLink{
+    width:150px;
+    height:150px;
+    margin-left: 25px;
+}
+.bio{
+    margin-left:25px;
+    margin-right:25px;
+    margin-top: 5px;
+    color: #808080;
+}

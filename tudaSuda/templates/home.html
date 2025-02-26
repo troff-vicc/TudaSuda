@@ -2,8 +2,10 @@
 {% load static %}
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>ТудаСюда</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
 </head>
 <body>
 <header>
@@ -14,10 +16,10 @@
 
 {% for route in routes %}
 <div class="containers" id="{{route.0}}">
-    <p class="author-name">{{route.3}}</p>
-    <b>{{route.1}}</b>
-    <img src="data:image/gif;base64,{{route.4}}">
-    <p>{{route.2}}</p>
+    <!--<p class="author-name">{{route.3}}</p>-->
+    <p class="tourName">{{route.1}}</p>
+    <img class="imgLink" src="data:image/gif;base64,{{route.4}}">
+    <p class="bio">{{route.2}}</p>
 </div>
 {% endfor %}
 

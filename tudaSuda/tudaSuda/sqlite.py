@@ -3,7 +3,7 @@ import sqlite3
 
 class DateBase:
     def __init__(self):
-        self.connection: sqlite3.Connection = sqlite3.connect('dataPlace.db')#tudaSuda/
+        self.connection: sqlite3.Connection = sqlite3.connect('tudaSuda/dataPlace.db')#tudaSuda/
         self.cursor: sqlite3.Cursor = self.connection.cursor()
 
     def commit(self):
@@ -19,10 +19,11 @@ class DateBase:
         
 if __name__ == '__main__':
     base = DateBase()
-    encoded_string = base64.b64encode(file.read())
-    base.execute(
-        f"""DELETE FROM images WHERE id = 2"""
-            )
+    a = base.execute(
+        f"""SELECT * FROM users WHERE id = 0"""
+            ).fetchone()
+    
+    print(a)
     base.commit()
     base.close()
     

@@ -1,8 +1,8 @@
 from django import forms
 
 class LoginForm(forms.Form):
-    email = forms.CharField(label_suffix=False, label='', max_length=50,
-                            widget=forms.EmailInput(attrs={'placeholder': 'Почта',
+    name = forms.CharField(label_suffix=False, label='', max_length=50,
+                            widget=forms.EmailInput(attrs={'placeholder': 'Имя',
                                                            'autocomplete': "off"}))
     password = forms.CharField(label_suffix=False, label='', max_length=50,
                                widget=forms.PasswordInput(attrs={'placeholder': 'Пароль',
@@ -20,3 +20,14 @@ class RegistrationForm(forms.Form):
     password1 = forms.CharField(label_suffix=False, label='', max_length=50,
                                 widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль',
                                                             'autocomplete': "off"}))
+
+
+class AddForm(forms.Form):
+    boolFields = ((0, 'Нет'), (1, 'Да'))
+    name = forms.CharField(label_suffix=False, label='', max_length=50,
+                            widget=forms.EmailInput(attrs={'placeholder': 'Имя',
+                                                           'autocomplete': "off"}))
+    description = forms.CharField(label_suffix=False, label='', max_length=50,
+                               widget=forms.PasswordInput(attrs={'placeholder': 'Описание',
+                                                            'autocomplete': "off"}))
+    private = forms.ChoiceField(label_suffix=False, label='', choices=boolFields)
