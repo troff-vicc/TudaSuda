@@ -1,27 +1,59 @@
-.logo{
-    width:50px;
-    border-radius: 25px;
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    display: flex;
+    height:108px;
+    background-color: #F1F1F1;
+}
+body{
+    background-image: url(../back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.name{
+font-weight: 400;
+font-size: 24px;
+line-height: 39px;
+margin-top: 42px;
+margin-left:9px;
+font-family: "Khula", serif;
+font-weight: 400;
+font-style: normal;
 }
 a{
-    text-decoration: none;
-    color:black;
+text-decoration: none;
+color:black
 }
-.containers{
-    width:200px;
-    border:1px solid black;
-    border-radius: 30px;
-}
-.tourName{
-    text-align: center;
-}
-.imgLink{
-    width:150px;
-    height:150px;
-    margin-left: 25px;
+.logo{
+    width:104px;
+    height:46px;
+    margin-top: 34px;
+    margin-left:40px;
 }
 .bio{
-    margin-left:25px;
-    margin-right:25px;
-    margin-top: 5px;
-    color: #808080;
+font-size: 96px;
+color:#FFFFFF;
+margin-top: 104px;
+margin-left: 70px;
+font-weight: 600;
 }
+.bio1{
+    font-size: 96px;
+    color:#FFFFFF;
+    margin-top: 54px;
+    margin-left: 70px;
+    font-weight: 600;
+    }
+    .more{
+        font-size: 40px;
+    }
+    .divis{
+        width:354px;
+        height:109px;
+        border-radius: 24px;
+        background-color: #A9BF00;
+        margin-left:107px;
+        margin-top:80px;
+    }

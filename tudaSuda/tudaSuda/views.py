@@ -150,9 +150,18 @@ def add(request):
     
     dateBase = DateBase()
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = AddForm(request.POST)
         if form.is_valid():
-            None
+            cur = dateBase.execute(f'''SELECT id from route;''').fetchall()
+            dateBase.execute(
+                f"""INSERT INTO route (name, description, private)
+                VALUES("{form.name}", "{form.description}", "{form.private}");""")
+            dateBase.commit()
+            dateBase.close()
     else:
         form = AddForm()
     return render(request, 'add.html', {'form': form})
+
+
+def map(request):
+    return render(request, 'map.html')

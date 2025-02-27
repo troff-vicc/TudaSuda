@@ -9,26 +9,23 @@
 </head>
 <body>
 <header>
-    <a href="/"><img src="{% static 'logo.jpg'%}" alt="logo" class="logo"></a>
-    <a class="name" href="/">ТудаСюда</a>
-    <a href="/login" class="log">{{login}}</a>
+    <a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a>
+    <a class="name" href="/"><p class="text">ТудаСюда</p></a>
+    <a href="/search" class="search"><img src="{% static 'search.png'%}" alt="logo" class="search" style="float:right;"></a>
+    <a href="/profile" class="profile"><img src="{% static 'profile.png'%}" alt="logo" class="profile"></a>
 </header>
-
+<p class="bio">Туда - за впечатлениями,</p>
+<p class="bio1">Сюда - с воспоминаниями</p>
+<div class="divis"><a href="/more" class="more">подробнее ></a></div>
+<!--
 {% for route in routes %}
 <div class="containers" id="{{route.0}}">
-    <!--<p class="author-name">{{route.3}}</p>-->
+    <p class="author-name">{{route.3}}</p>
     <p class="tourName">{{route.1}}</p>
     <img class="imgLink" src="data:image/gif;base64,{{route.4}}">
     <p class="bio">{{route.2}}</p>
 </div>
 {% endfor %}
-
-<div class="div">
-    <a href="/"><img src="{% static 'home.png'%}" id="home"></a>
-    <a href="/search"><img src="{% static 'search.png'%}" id="search"></a>
-    <a href="/create"><img src="{% static 'add.png'%}" id="create"></a>
-    <a href="/map"><img src="{% static 'map.png'%}" id="map"></a>
-    <a href="/profile"><img src="{% static 'profile.png'%}" id="profile"></a>
-</div>
+-->
 </body>
 </html>

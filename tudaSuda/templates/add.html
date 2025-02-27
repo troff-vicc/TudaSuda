@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/add.css'%}">
+    <meta charset="UTF-8">
+    <title>Добавить</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=42544b33-4c3a-453d-80bb-acebe1c1cda8&lang=ru_RU" type="text/javascript"></script>
+      <script>
+        ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map ('map', {
+        center: [55.75, 37.61],
+        zoom: 5
+    });
+}
+    </script>
+</head>
+<body>
+    <p class="cent"><a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a></p>
+    <!--<a class="name" href="/">ТудаСюда</a>-->
+    <p class="input">Вход</p>
+    <form method="post" id="inputForm" novalidate>
+        {% csrf_token %}
+        <p class="cent">{{ form.name }}</p>
+        <p class="cent">{{ form.description }}</p>
+        <p class="cent">{{ form.private }}</p>
+        <p class="cent"> <input type="submit" id="button" value="Войти"></p>
+    </form>
+    <div id="map" style="width: 600px; height: 400px"></div>
+</body>
+</html>
