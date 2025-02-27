@@ -112,7 +112,7 @@ def profile(request):
     if request.COOKIES.get('id'):
         id = request.COOKIES.get('id')
     else:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/login')
     
     dateBase = DateBase()
     userList = list(dateBase.execute(f"SELECT username, description, img, route, id, email FROM users WHERE id = '{id}'").fetchone())
@@ -146,7 +146,7 @@ def add(request):
     if request.COOKIES.get('id'):
         id = request.COOKIES.get('id')
     else:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/login')
     
     dateBase = DateBase()
     if request.method == 'POST':
@@ -165,7 +165,7 @@ def add(request):
 
 def edit(request, id):
     if request.COOKIES.get('id') != str(id):
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/login')
     
     dateBase = DateBase()
     

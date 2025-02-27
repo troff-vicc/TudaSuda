@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e588072-b34e-4521-9803-61eb8d0b45d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tudaSuda/templates/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tudaSuda/dataPlace.db" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/dataPlace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tudaSuda/templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tudaSuda/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tudaSuda/tudaSuda/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tudaSuda/tudaSuda/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740630486257</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="profile">
+      <option name="closed" value="true" />
+      <created>1740686977155</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740686977156</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -180,6 +184,7 @@
     <MESSAGE value="the 1" />
     <MESSAGE value="chut lucshe" />
     <MESSAGE value="1den do sdachi" />
-    <option name="LAST_COMMIT_MESSAGE" value="1den do sdachi" />
+    <MESSAGE value="profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile" />
   </component>
 </project>

@@ -7,39 +7,50 @@ header{
     height:108px;
     background-color: #F1F1F1;
 }
-body{
-    background-image: url(../back.png);
+main{
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../back.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.name{
-font-weight: 400;
-font-size: 24px;
-line-height: 39px;
-margin-top: 42px;
-margin-left:9px;
-font-family: "Khula", serif;
-font-weight: 400;
+.text{
+
+    font-family: "Open Sans", serif;
+
+position: absolute;
+width: 125px;
+height: 39px;
+left: 51px;
+top: 52px;
+
+
 font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 39px;
+
+
 }
 a{
 text-decoration: none;
 color:black
 }
 .logo{
-    width:104px;
-    height:46px;
-    margin-top: 34px;
+    width:93px;
+    height:40px;
+    margin-top: 23px;
     margin-left:40px;
 }
 .bio{
+    font-family: "Open Sans", serif;
 font-size: 96px;
 color:#FFFFFF;
-margin-top: 104px;
+padding-top: 104px;
 margin-left: 70px;
 font-weight: 600;
 }
 .bio1{
+    font-family: "Open Sans", serif;
     font-size: 96px;
     color:#FFFFFF;
     margin-top: 54px;
@@ -50,10 +61,162 @@ font-weight: 600;
         font-size: 40px;
     }
     .divis{
+
+font-family: "Open Sans", serif;
+        text-align: center;
         width:354px;
-        height:109px;
+        height:79px;
         border-radius: 24px;
         background-color: #A9BF00;
         margin-left:107px;
         margin-top:80px;
+        padding-top:10px;
+        font-size: 46px;
     }
+    .profile{
+        margin-top: 9px;
+    }
+    .pop{
+        font-family: "Open Sans", serif;
+        color:#FFFFFF;
+        margin-left: 70px;
+        font-size: 96px;
+        margin-top:300px;
+        padding-bottom: 23px;
+    }
+    .nn{
+        height:432px;
+        position: absolute;
+        left: 103px;
+        top:1220px;
+    }
+    .nizhn{
+        font-family: "Open Sans", serif;
+        color:#FFFFFF;
+        font-size: 32px;
+position: absolute;
+width: 303px;
+height: 51px;
+left: 131px;
+top: 1590px;
+    }
+    
+.msk{
+
+position: absolute;
+width: 123px;
+height: 51px;
+left: 587px;
+top: 1590px;
+
+font-family: "Open Sans", serif;
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 51px;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+}
+.moskov{
+    height:432px;
+    position: absolute;
+    left: 560px;
+    top:1220px;
+}
+.bio2{
+ 
+
+position: absolute;
+width: 1132px;
+height: 231px;
+left: 142px;
+top: 1780px;
+
+font-family: "Open Sans", serif;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 77px;
+letter-spacing: -0.02em;
+
+color: #000000;
+text-align: center;
+
+}
+.talk{
+
+position: absolute;
+width: 191px;
+height: 191px;
+left: 1378px;
+top: 1780px;
+
+
+}
+.backgr{
+
+
+position: absolute;
+width: 1407px;
+height: 692px;
+left: 178px;
+top: 2144px;
+
+}
+.bio3{
+
+
+position: absolute;
+width: 1114px;
+height: 154px;
+left: 232px;
+top: 2172px;
+
+font-family: "Open Sans", serif;
+font-style: normal;
+font-weight: 600;
+font-size: 96px;
+line-height: 154px;
+
+color: #FFFFFF;
+
+
+}
+.bio4{
+
+
+
+position: absolute;
+width: 1208px;
+height: 131px;
+right: 270px;
+top: 2642px;
+
+font-family: "Open Sans", serif;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 58px;
+text-align: right;
+
+color: #FFFFFF;
+
+
+}
+.bio5{
+    position: absolute;
+    width: 1208px;
+    height: 131px;
+left:40%;
+    top: 2902px;
+    
+    font-family: "Open Sans", serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: 58px;
+    
+    color: black; 
+}

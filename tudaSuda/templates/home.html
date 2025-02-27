@@ -6,17 +6,39 @@
     <meta charset="UTF-8">
     <title>ТудаСюда</title>
     <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a>
     <a class="name" href="/"><p class="text">ТудаСюда</p></a>
-    <a href="/search" class="search"><img src="{% static 'search.png'%}" alt="logo" class="search" style="float:right;"></a>
+   <div> <a href="/search" class="search"><img src="{% static 'search.png'%}" alt="logo" class="search"></a></div>
     <a href="/profile" class="profile"><img src="{% static 'profile.png'%}" alt="logo" class="profile"></a>
 </header>
+<main>
 <p class="bio">Туда - за впечатлениями,</p>
 <p class="bio1">Сюда - с воспоминаниями</p>
-<div class="divis"><a href="/more" class="more">подробнее ></a></div>
+<a href="/more" class="more"><p class="divis">подробнее ></p></a>
+<p class="pop">Популярные направления</p>
+</main>
+<img src="{% static 'nizhn.png'%}" alt="nn" class="nn">
+<p class="nizhn">Нижний Новгород</p>
+<img src="{% static 'msk.png'%}" alt="moskov" class="moskov">
+<p class="msk">Москва</p>
+<p class="bio2">Выберите свой город и путешествуйте
+    Делитесь впечатлениями с окружающими
+           Общайтесь с едиомышленниками</p>
+<img src="{% static 'talk.png'%}" alt="talk" class="talk">
+<img src="{% static 'background.png'%}" alt="back" class="backgr">
+<p class="msk">Москва</p>
+<p class="bio3">С нами путешествуют</p>
+<p class="bio4">Создайте свой неповторимый маршрут в любимое место вместе с нами</p>
+<p class="bio5">© ТудаСюда</p>
+
+
+
 <!--
 {% for route in routes %}
 <div class="containers" id="{{route.0}}">
