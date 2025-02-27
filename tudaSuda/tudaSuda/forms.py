@@ -25,9 +25,29 @@ class RegistrationForm(forms.Form):
 class AddForm(forms.Form):
     boolFields = ((0, 'Нет'), (1, 'Да'))
     name = forms.CharField(label_suffix=False, label='', max_length=50,
-                            widget=forms.EmailInput(attrs={'placeholder': 'Имя',
+                            widget=forms.TextInput(attrs={'placeholder': 'Имя',
                                                            'autocomplete': "off"}))
     description = forms.CharField(label_suffix=False, label='', max_length=50,
                                widget=forms.PasswordInput(attrs={'placeholder': 'Описание',
                                                             'autocomplete': "off"}))
     private = forms.ChoiceField(label_suffix=False, label='', choices=boolFields)
+    
+
+class EditForm(forms.Form):
+    email = forms.CharField(label_suffix=False, label='', max_length=50,
+                           widget=forms.EmailInput(attrs={'placeholder': 'Почта',
+                                                          'autocomplete': "off"}))
+    description = forms.CharField(label_suffix=False, label='', max_length=50,
+                              widget=forms.TextInput(attrs={'placeholder': 'Описание',
+                                                                'autocomplete': "off"}))
+    img_file = forms.ImageField(label_suffix=False,label='', max_length=255)
+    def __init__(self, *args, **kwargs):
+        t = False
+        if kwargs:
+            t = True
+            my_arg = kwargs.pop('my_arg')
+        super(EditForm, self).__init__(*args, **kwargs)
+        if t:
+            self.initial['email'] = my_arg[1]
+            self.initial['description'] = my_arg[0]
+            

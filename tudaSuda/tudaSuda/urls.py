@@ -24,5 +24,6 @@ urlpatterns = [
     path('login', views.login),
     path('profile', views.profile),
     path('add', views.add),
-    path('map', views.map)
+    path('map', views.map),
+    path('edit/<int:id>', views.edit, name='installAccount'),
 ]

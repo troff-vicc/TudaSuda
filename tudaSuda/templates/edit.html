@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<html lang="en">
+    <head>
+    <!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/registration.css'%}">
+</head>
+<body>
+<p class="cent"><a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a></p>
+    <!--<a class="name" href="/">ТудаСюда</a>-->
+        <p class="input">Регистрация</p>
+<form method="post" id="inputForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p class="cent">{{ userList.0 }}</p>
+    <p class="cent">{{ form.email }}</p>
+    <p class="cent">{{ form.description }}</p>
+    <p class="cent">{{ form.img_file }}</p>
+    <!-- https://cdn-icons-png.flaticon.com/512/1693/1693138.png -->
+    <p class="cent"> <input type="submit" id="button" value="Сохранить"></p>
+</form>
+
+</body>
+</html>

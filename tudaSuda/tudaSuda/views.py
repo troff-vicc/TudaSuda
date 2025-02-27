@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .sqlite import DateBase
-from .forms import LoginForm, RegistrationForm, AddForm
+from .forms import LoginForm, RegistrationForm, AddForm, EditForm
 import json
 
 
@@ -115,7 +115,7 @@ def profile(request):
         return HttpResponseRedirect('/')
     
     dateBase = DateBase()
-    userList = list(dateBase.execute(f"SELECT username, description, img, route FROM users WHERE id = '{id}'").fetchone())
+    userList = list(dateBase.execute(f"SELECT username, description, img, route, id, email FROM users WHERE id = '{id}'").fetchone())
     img = json.loads(userList[2])[0]
     img = dateBase.execute(
         f'''SELECT img FROM images WHERE id = {img}'''
@@ -161,6 +161,46 @@ def add(request):
     else:
         form = AddForm()
     return render(request, 'add.html', {'form': form})
+
+
+def edit(request, id):
+    if request.COOKIES.get('id') != str(id):
+        return HttpResponseRedirect('/')
+    
+    dateBase = DateBase()
+    
+    if request.method == 'POST':
+        form = EditForm(request.POST, request.FILES)
+        if form.is_valid():
+            import base64, json
+            email = form.cleaned_data['email']
+            description = form.cleaned_data['description']
+            img_file = form.cleaned_data['img_file']
+            image_64_encode = base64.b64encode(img_file.read())
+            imgLen = int(dateBase.execute("""SELECT id FROM images ORDER BY id DESC LIMIT 1;""").fetchone()[0])+1
+            dateBase.execute(
+                f"""INSERT INTO images (id, img, autor)
+                                        VALUES({imgLen}, "{image_64_encode}", "{id}");""")
+            dataJson = json.dumps([f'{imgLen}'])
+            dateBase.execute(f"""UPDATE users
+                SET email = '{email}',
+                    description = '{description}',
+                    img = '{dataJson}'
+                WHERE id = {id}; """
+                             )
+            dateBase.commit()
+            dateBase.close()
+            return HttpResponseRedirect('/profile')
+        else:
+            return HttpResponseRedirect('/profile')
+    else:
+        userList = list(
+            dateBase.execute(f"SELECT username, description, email FROM users WHERE id = '{id}'").fetchone()
+        )
+        form = EditForm(my_arg=userList[1:])
+    
+    return render(request, 'edit.html', {'form': form, 'userList': userList})
+    
 
 
 def map(request):
