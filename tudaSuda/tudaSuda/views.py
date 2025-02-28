@@ -70,7 +70,7 @@ def registration(request):
     
     def checkName():
         cur = dateBase.execute(f'''SELECT username from users WHERE username = "{name}" ''').fetchone()
-        if cur == []:
+        if cur is None:
             if checkString(name):
                 return [True, '']
             else:
@@ -91,7 +91,7 @@ def registration(request):
                 checkName = checkName()
                 if checkName[0]:
                     cur = dateBase.execute(f'''SELECT username from users;''').fetchall()
-                    dateBase.execute(f"""INSERT INTO users VALUES({len(cur)}, {name}, {email}, {password}, NONE, NONE, NONE);""")
+                    dateBase.execute(f"""INSERT INTO users (id, username, email, password) VALUES({len(cur)}, '{name}', '{email}', '{password}');""")
                     dateBase.commit()
                     dateBase.close()
                     return HttpResponseRedirect('/login')
@@ -116,28 +116,34 @@ def profile(request):
     
     dateBase = DateBase()
     userList = list(dateBase.execute(f"SELECT username, description, img, route, id, email FROM users WHERE id = '{id}'").fetchone())
-    img = json.loads(userList[2])[0]
-    img = dateBase.execute(
-        f'''SELECT img FROM images WHERE id = {img}'''
-    ).fetchone()[0]
-    userList[2] = img[2:-1]
-    routesID = json.loads(userList[3])
-    routesS = []
-    for ID in routesID:
-        routes = dateBase.execute(
-            f'''SELECT id, name, description, autor, img
-                    FROM route WHERE id="{ID}" '''
-        ).fetchone()
-        img = json.loads(routes[-1])[0]
-        autor = json.loads(routes[-2])[0]
+    if userList[2]:
+        img = json.loads(userList[2])[0]
         img = dateBase.execute(
             f'''SELECT img FROM images WHERE id = {img}'''
         ).fetchone()[0]
-        autor = dateBase.execute(
-            f'''SELECT username FROM users WHERE id = {autor}'''
-        ).fetchone()[0]
-        routes = list(routes[:-2]) + [autor] + [img[2:-1]]
-        routesS.append(routes)
+        userList[2] = img[2:-1]
+    else:
+        userList[2] = None
+    if userList[3]:
+        routesID = json.loads(userList[3])
+        routesS = []
+        for ID in routesID:
+            routes = dateBase.execute(
+                f'''SELECT id, name, description, autor, img
+                        FROM route WHERE id="{ID}" '''
+            ).fetchone()
+            img = json.loads(routes[-1])[0]
+            autor = json.loads(routes[-2])[0]
+            img = dateBase.execute(
+                f'''SELECT img FROM images WHERE id = {img}'''
+            ).fetchone()[0]
+            autor = dateBase.execute(
+                f'''SELECT username FROM users WHERE id = {autor}'''
+            ).fetchone()[0]
+            routes = list(routes[:-2]) + [autor] + [img[2:-1]]
+            routesS.append(routes)
+    else:
+        routesS = []
     dateBase.close()
     return render(request, 'profile.html', {'userList': userList, "routes": routesS})
 
