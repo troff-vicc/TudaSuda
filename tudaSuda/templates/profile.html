@@ -2,20 +2,29 @@
 {% load static %}
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>profile</title>
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- mass.net<header>
-    <a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a>
-    <a class="name" href="/">ТудаСюда</a>
-    <a href="/login" class="log">{{login}}</a>
-</header> -->
-<b>{{userList.0}}</b>
-<img src="data:image/gif;base64,{{userList.2}}">
-<p>{{userList.1}}</p>
-<p>{{userList.5}}</p>
-<a href="/edit/{{userList.4}}">Изменить</a>
+    <header>
+        <a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a>
+        <a class="name" href="/"><p class="text">ТудаСюда</p></a>
+       <div> <a href="/search" class="search"><img src="{% static 'search.png'%}" alt="logo" class="search"></a></div>
+        <a href="/profile" class="profile"><img src="{% static 'profile.png'%}" alt="logo" class="profile"></a>
+    </header>
+    <img src="data:image/gif;base64,{{userList.2}}" class="image">
+    <p class="name">Имя пользователя:</p>
+    <p class="imua">{{userList.0}}</p>
+    <p class="name">О себе:</p>
+<p class="imua">{{userList.1}}</p>
+<p class="name">Почта:</p>
+<p class="imua">{{userList.5}}</p>
+<a href="/edit/{{userList.4}}" ><p class="edit">Изменить</p></a>
 {% for route in routes %}
 <div class="containers" id="{{route.0}}">
     <b>{{route.1}}</b>
