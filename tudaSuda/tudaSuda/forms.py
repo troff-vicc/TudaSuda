@@ -24,13 +24,17 @@ class RegistrationForm(forms.Form):
 
 class AddForm(forms.Form):
     boolFields = ((0, 'Нет'), (1, 'Да'))
+    #images = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    
     name = forms.CharField(label_suffix=False, label='', max_length=50,
                             widget=forms.TextInput(attrs={'placeholder': 'Имя',
                                                            'autocomplete': "off"}))
     description = forms.CharField(label_suffix=False, label='', max_length=50,
-                               widget=forms.PasswordInput(attrs={'placeholder': 'Описание',
+                               widget=forms.TextInput(attrs={'placeholder': 'Описание',
                                                             'autocomplete': "off"}))
     private = forms.ChoiceField(label_suffix=False, label='', choices=boolFields)
+    
+    GPX = forms.CharField(label_suffix=False, label='', max_length=1000)
     
 
 class EditForm(forms.Form):

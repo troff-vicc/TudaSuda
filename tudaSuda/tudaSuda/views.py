@@ -153,17 +153,32 @@ def add(request):
         id = request.COOKIES.get('id')
     else:
         return HttpResponseRedirect('/login')
-    
+    import base64
     dateBase = DateBase()
     if request.method == 'POST':
-        form = AddForm(request.POST)
+        form = AddForm(request.POST, request.FILES)
         if form.is_valid():
             cur = dateBase.execute(f'''SELECT id from route;''').fetchall()
+            name = form.cleaned_data['name']
+            description = form.cleaned_data['description']
+            private = form.cleaned_data['private']
+            GPX = form.cleaned_data['GPX']
+            autor = json.dumps([f'{id}'])
+            idImg = []
+            for f in request.FILES.getlist('photos'):
+                image_64_encode = base64.b64encode(f.read())
+                imgLen = int(dateBase.execute("""SELECT id FROM images ORDER BY id DESC LIMIT 1;""").fetchone()[0]) + 1
+                dateBase.execute(
+                    f"""INSERT INTO images (id, img, autor)
+                                                        VALUES({imgLen}, "{image_64_encode}", "{id}");""")
+                idImg.append(imgLen)
+            dataJson = json.dumps(idImg)
             dateBase.execute(
-                f"""INSERT INTO route (name, description, private)
-                VALUES("{form.name}", "{form.description}", "{form.private}");""")
+                f"""INSERT INTO route (id, name, description, GPX, autor, private, img)
+                                        VALUES({len(cur)}, '{name}', '{description}', '{GPX}', '{autor}', {private}, '{dataJson}');""")
             dateBase.commit()
             dateBase.close()
+            return HttpResponseRedirect('/')
     else:
         form = AddForm()
     return render(request, 'add.html', {'form': form})

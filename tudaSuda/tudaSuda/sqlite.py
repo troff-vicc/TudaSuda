@@ -19,11 +19,13 @@ class DateBase:
         
 if __name__ == '__main__':
     base = DateBase()
-    a = base.execute(
-        f"""SELECT * FROM users WHERE id = 0"""
-            ).fetchone()
+    import json
     
-    print(a)
+    img = json.dumps([f'3'])
+    base.execute(f"""UPDATE route
+                    SET img = '{img}'
+                    WHERE id = {1}; """
+                     )
     base.commit()
     base.close()
     

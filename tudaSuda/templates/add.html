@@ -7,19 +7,21 @@
     <meta charset="UTF-8">
     <title>Добавить</title>
     <script src="https://api-maps.yandex.ru/v3/?apikey=42544b33-4c3a-453d-80bb-acebe1c1cda8&lang=ru_RU"></script>
-    <script type="module" src="{% static 'js/add.js'%}"></script>
 </head>
 <body>
     <p class="cent"><a href="/"><img src="{% static 'logo.png'%}" alt="logo" class="logo"></a></p>
     <!--<a class="name" href="/">ТудаСюда</a>     -->
-    <p class="input">Вход</p>
-    <form method="post" id="inputForm" novalidate>
+    <form method="post" id="inputForm" enctype="multipart/form-data">
         {% csrf_token %}
+        <p class="cent">{{ form.photos }}</p>
         <p class="cent">{{ form.name }}</p>
         <p class="cent">{{ form.description }}</p>
         <p class="cent">{{ form.private }}</p>
-        <p class="cent"> <input type="submit" id="button" value="Войти"></p>
+        {{ form.GPX.as_hidden }}
+        <p id="map1">Сохранить</p>
+        <!--<p class="cent"> <input type="submit" id="button" value="Сохранить"></p>-->
     </form>
     <div id="map" style="width: 600px; height: 400px"></div>
+<script type="module" src="{% static 'js/add.js'%}"></script>
 </body>
 </html>
